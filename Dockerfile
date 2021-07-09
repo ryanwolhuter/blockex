@@ -1,8 +1,9 @@
 FROM elixir:latest
 
 RUN apt update && \
-  apt install -y postgresql-client && \
-  apt install -y nodejs npm
+  apt install -y postgresql-client nodejs npm inotify-tools
+
+RUN npm i -g npm
 
 RUN mkdir /app
 COPY . /app
